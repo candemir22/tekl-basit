@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+<head>
+  <style>
+#map {  height: 100%;}
+
+html,
+body {  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+ </style>
+  
+  
+    <title>Marker Animations</title>
+<button id="demo" onclick="getLocation()">apike</button>
+<button id="demo" onclick="getLocation()">f1</button>
+<button id="demo" onclick="getLocation()">f2</button>
+<button id="demo" onclick="getLocation()">f3</button>
+<button id="demo" onclick="getLocation()">f4</button>
+<button id="demo" onclick="getLocation()">f5</button>
+<button id="demo" onclick="getLocation()">f6</button>
+  </head>
+  <body>
+    <div id="map"></div>
+
+
+
+	  <script>
+const x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function success(position) {
+  x.innerHTML = "Latitude: " + position.coords.longitude + 
+  "<br>Longitude: " + position.coords.latitude ;
+}
+function error() {
+  alert("Sorry, no position available.");
+}
+</script>
+
+
+
+<script>
+
+
+let marker;
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 8,
+    center: { lat: 40.00, lng: 49.07 },
+  });
+  
+  
+  	  // Construct svg basla
+	  const triangleCoords = [
+    { lat: 40.00, lng: 49.19 },
+    { lat: 40.400, lng:49.118 },
+    { lat: 40.300, lng: 49.757 },
+    { lat: 40.700, lng: 49.19 },
+  ];
+  // Construct the polygon.
+  const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+  });
+  bermudaTriangle.setMap(map);
+    // Construct svg bıtıs
+	
+	
+	
+	  // Construct svg basla
+  const svgMarker = {
+    path: "M-1.547 12l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM0 0q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
+    fillColor: "blue",
+    fillOpacity: 0.6,
+    strokeWeight: 0,
+    rotation: 0,
+    scale: 2,
+    anchor: new google.maps.Point(0, 20),
+  };
+    // Construct svg bıtıs
+
+  new google.maps.Marker({
+   position: { lat: 40.10, lng: 49.10 },
+    icon: svgMarker,
+    map: map,
+  });
+  
+  
+  
+  
+  
+//ıkonlar yukarıya
+}
+ 
+  
+  
+  
+  
+window.initMap = initMap;
+</script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

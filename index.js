@@ -5,7 +5,7 @@ async function initMap() {
     // Request needed libraries.
     await google.maps.importLibrary("maps");
     // Get the gmp-map element.
-    const mapElement = new google.maps.Map(document.getElementById("map");
+    const mapElement = new google.maps.Map(document.getElementById("map"));
     const map = new google.maps.Map(document.getElementById("map"), {    zoom: 18,    center: { lat: 42, lng: 42 },    mapTypeId: "terrain",  });
     let marker;
 
@@ -52,6 +52,7 @@ function toggleBounce() {
 }
 
 initMap();
+
 
 
 

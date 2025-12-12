@@ -1,4 +1,6 @@
 let featureLayer;
+let marker;
+
 async function initMap() {
     // Request needed libraries.
     await google.maps.importLibrary("maps");
@@ -50,5 +52,6 @@ function toggleBounce() {
 }
 
 initMap();
+
 
 

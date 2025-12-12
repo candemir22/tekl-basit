@@ -9,10 +9,10 @@ async function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {    zoom: 18,    center: { lat: 42, lng: 42 },    mapTypeId: "terrain",  });
     let marker;
 
-function initMap() {
+
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
-    center: { lat: 59.325, lng: 18.07 },
+    center: { lat: 42.325, lng: 42.07 },
   });
 
   marker = new google.maps.Marker({
@@ -52,6 +52,7 @@ function toggleBounce() {
 }
 
 initMap();
+
 
 
 

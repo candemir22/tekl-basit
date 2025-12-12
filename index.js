@@ -1,4 +1,10 @@
-	
+const map = new google.maps.Map(document.getElementById("map"), {    zoom: 18,    center: { lat: 37.214931, lng: 28.363885 },    mapTypeId: "terrain",  });
+
+    // MARKER OLUSTUR
+  marker = new google.maps.Marker({    map,    draggable: true,    animation: google.maps.Animation.DROP,  position: { lat: 42.327, lng: 42.067 },  });
+  
+
+
     // MARKER FONCTİONLARI 
 function kazibol() {
   if (marker.getAnimation() !== null) {
@@ -137,6 +143,7 @@ var kmlLayer = new google.maps.KmlLayer({
 	
 	
 	
+
 
 
 

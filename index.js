@@ -24,6 +24,6 @@ async function initMap() {
     };
 }
 
-     marker2 = new google.maps.Marker({    map, position: { lat: 41.327, lng: 41.067 }, });
 
 initMap();
+
